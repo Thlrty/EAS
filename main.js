@@ -1,5 +1,10 @@
 const grid = document.querySelector('.grid');
 const color = document.querySelector('.color');
+let sizeV = document.querySelector('.sizeValue');
+let size = sizeV.value;
+const reset = document.querySelector('.reset');
+
+let draw = false;
 
 function setupGrid(size) {
 
@@ -9,16 +14,37 @@ function setupGrid(size) {
     let gridElement = document.createElement('div')
     gridElement.classList.add('gridElement')
 
-    gridElement.addEventListener('mouseover', ()=> {
-      gridElement.style.backgroundColor = color.value;
-    })
+
     gridElement.addEventListener('mousedown', ()=> {
       gridElement.style.backgroundColor = color.value;
     })
+    gridElement.addEventListener('mouseover', ()=> {
+      if(!draw) return
+      gridElement.style.backgroundColor = color.value;
+    })
+    
 
     grid.appendChild(gridElement);
   }
-
 }
 
-setupGrid(40);
+window.addEventListener('mousedown', ()=>{
+  draw = true
+})
+
+window.addEventListener('mouseup', ()=>{
+  draw = false
+})
+
+sizeV.addEventListener('change', ()=>{
+  size = sizeV.value;
+  grid.innerHTML = '';
+  setupGrid(size);
+})
+
+reset.addEventListener('click', ()=>{
+  grid.innerHTML = '';
+  setupGrid(size);
+})
+
+setupGrid(size);

@@ -4,6 +4,22 @@ html, body {
   background-color: lightblue;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: -10px;
+} 
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  height: 100px;
+}
+
 .main {
   height: 100%;
   display: flex;
@@ -20,6 +36,40 @@ html, body {
   gap: 30px;
 }
 
+button {
+  background-color: lightgray;
+  width: 150px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: solid black 4px;
+}
+
+.sizeValue {
+  background-color: lightgray;
+  width: 128px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: solid black 4px;
+  text-align: center;
+}
+
+input[type='color'] {
+  width: 80px;
+  height: 80px;
+  border: none;
+  background-color: lightblue;
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
 .grid {
   --size: 4;
   display: grid;
@@ -28,7 +78,7 @@ html, body {
   height: 600px;
   width: 600px;
   background-color: black;
-  gap: 1px;
+  gap: 0.5px;
 }
 
 .gridElement {
