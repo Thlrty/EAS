@@ -1,0 +1,36 @@
+
+html, body {
+  height: 100%;
+  background-color: lightblue;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.grid {
+  --size: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repear(var(--size), 1fr);
+  height: 600px;
+  width: 600px;
+  background-color: black;
+  gap: 1px;
+}
+
+.gridElement {
+  background-color: white;
+}
